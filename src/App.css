@@ -1,0 +1,464 @@
+:root {
+    --mainColor: #274c77;
+}
+
+.PageNotFound {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    z-index: 1031;
+}
+
+.login-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999 !important;
+    width: 100%;
+    background-color: #ddd;
+}
+
+.login-container .auth {
+    justify-content: center;
+}
+
+.outline__border__none {
+    outline: none !important;
+    border: none !important;
+    background-color: transparent !important;
+}
+
+/* .search-container {
+    display: flex;
+}
+
+.search-container .search-box {
+    width: 22%;
+}
+
+.search-container .btn-box {
+    width: 12%;
+} */
+
+.table td {
+    padding: 4px 12px;
+}
+
+.text-field {
+    position: relative;
+}
+
+.text-field input,
+.text-field textarea {
+    display: inline-block;
+    border: 1px solid #dddddd;
+    /*  border-bottom: 1px solid var(--green);  */
+    color: black;
+    background-color: #fff;
+    padding: 5px 8px 3px 8px;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.text-field input:focus,
+.text-field textarea:focus {
+    border: 1px solid #dddddd !important;
+    background-color: #fff;
+    outline: none;
+}
+
+.text-field label {
+    color: #333;
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    top: 5px;
+    transition: 0.2s;
+}
+
+.text-field input:focus~label,
+.text-field input:valid~label,
+.text-field textarea:focus~label,
+.text-field textarea:valid~label {
+    top: -9px !important;
+    left: 5px;
+    font-size: 12px;
+    color: red;
+    background-color: #fff;
+    padding: 0px 5px;
+}
+
+.text-level {
+    position: relative;
+}
+
+.text-level input,
+.text-level textarea {
+    display: inline-block;
+    border: 1px solid #dddddd;
+    color: var(--txt-black);
+    background-color: #fff;
+    padding: 5px 8px 3px 8px;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.text-level input:focus,
+.text-level textarea:focus {
+    border: 1px solid #dddddd;
+    background-color: #fff;
+    outline: none;
+}
+
+.text-level label {
+    position: absolute;
+    top: -12px;
+    left: 5px;
+    font-size: 12px;
+    color: red;
+    background-color: #fff;
+    padding: 3px 5px;
+}
+
+.scroll-box {
+    height: auto;
+    max-height: 240px !important;
+    overflow-y: scroll;
+}
+
+.advance_search_modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
+    z-index: 1000;
+    overflow: hidden;
+    padding: 10px 20px;
+    box-shadow: 4px 3px 8px gray;
+    transition: 0.5s;
+}
+
+.address_location {
+    background-color: #fff;
+    position: absolute;
+    top: 66px;
+    width: 98%;
+    height: auto;
+    max-height: 220px;
+    z-index: 100;
+    overflow-y: scroll;
+    padding: 6px 7px 6px 7px;
+    /* box-shadow: -1px 2px 12px gray; */
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.address_location input {
+    list-style-type: none;
+    background-color: #eee;
+    margin-top: 6px;
+    width: 100%;
+    padding: 3px 6px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.address_location input:first-child {
+    display: none !important;
+}
+
+.address_location input:hover {
+    background-color: #ddd;
+    box-shadow: 0px 0px 2px #fff;
+}
+
+.offence_tab .nav-pills li {
+    margin-top: 10px;
+}
+
+.offence_tab .nav-pills li a {
+    background-color: #fff;
+    box-shadow: 0px 0px 3px gray;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 0px 5px;
+    color: var(--mainColor);
+}
+
+.hover_tr:hover {
+    background-color: #eee !important;
+}
+
+.loader_box {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1029;
+}
+
+.icon__dots-rotating {
+    --size: 35px;
+    --dot: 10%;
+    --color: hotpink;
+    box-sizing: border-box;
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    line-height: var(--size);
+    margin: auto auto;
+    transform: scale (1) rotation(0deg);
+    animation: anim__dots-rotate 5s linear infinite;
+    background-image: radial-gradient(var(--color) var(--dot), transparent 0%), radial-gradient(var(--color) var(--dot), transparent 0%), radial-gradient(var(--color) var(--dot), transparent 0%), radial-gradient(var(--color) var(--dot), transparent 0%), radial-gradient(var(--color) var(--dot), transparent 0%), radial-gradient(var(--color) var(--dot), transparent 0%), radial-gradient(var(--color) var(--dot), transparent 0%), radial-gradient(var(--color) var(--dot), transparent 0%);
+    background-position: calc(var(--size) * 0.27) calc(var(--size) * 0.27), calc(var(--size) * -0.27) calc(var(--size) * 0.27), calc(var(--size) * 0.27) calc(var(--size) * -0.27), calc(var(--size) * -0.27) calc(var(--size) * -0.27), calc(var(--size) * 0.4) 0px, 0px calc(var(--size) * 0.4), calc(var(--size) * -0.4) 0px, 0px calc(var(--size) * -0.4);
+}
+
+@keyframes anim__dots-rotate {
+    to {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+@keyframes anim__dots-scale-rotate {
+    to {
+        transform: scale(1.2) rotate(360deg);
+    }
+}
+
+.fVmkgJ {
+    padding: 6px !important;
+}
+
+.wrapper-class {
+    border: 1px solid #ccc;
+}
+
+.editor-class {
+    background-color: lightgray;
+    padding: 1rem;
+    border: 1px solid #ccc;
+}
+
+.toolbar-class {
+    border: 1px solid #ccc;
+}
+
+.DraftEditor-root {
+    margin-left: -14px !important;
+}
+
+.react-datepicker-wrapper .react-datepicker__input-container input {
+    overflow: visible;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px 6px;
+}
+
+.react-datepicker-wrapper .react-datepicker__input-container input:focus {
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+.Agency .nav-pills a {
+    background: #fff;
+    border-radius: 3px;
+    padding: 4px 8px;
+    color: var(--mainColor);
+    box-shadow: 0px 0px 3px var(--mainColor);
+}
+
+.esri-search__container {
+    width: 30rem !important;
+}
+
+.esri-search__form input {
+    border: 1px solid #ddd !important;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 6px 10px;
+}
+
+.esri-search__form input:focus {
+    border: none;
+    outline: none;
+}
+
+.esri-search__container button {
+    outline: none;
+    border: 1px solid #ddd !important;
+}
+
+.esri-search__container:nth-child(n+2) {
+    display: none !important;
+}
+
+.big_screen_view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f4f6f9;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    z-index: 1030;
+}
+
+.back_to_web {
+    position: absolute;
+    top: 3%;
+    right: 2%;
+}
+
+.nav-pills a.active {
+    border-bottom: 2px solid var(--mainColor);
+}
+
+#cad_rms_switch {
+    margin-top: -12px;
+}
+
+#switch {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+#cad_rms_switch label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 50px;
+    height: 23px;
+    background: grey;
+    display: block;
+    border-radius: 20px;
+    position: relative;
+}
+
+.rms label:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 20px;
+    height: 17px;
+    background: #fff;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.cad label:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    width: 20px;
+    height: 17px;
+    background: #fff;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+#cad_rms_switch label:active:after {
+    width: 10px;
+}
+
+body *::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+body *::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
+
+body *::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+}
+
+.gZWIKX {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+.gZWIKX {
+    min-height: 0px !important;
+}
+
+.kgEPYv {
+    min-height: 35px !important;
+}
+
+.jzGaAN {
+    padding-left: 0px !important;
+}
+
+.jfrgbA {
+    padding-left: 0px !important;
+}
+
+.bdnCUi {
+    padding: 9px 3px 0px 0px !important;
+}
+
+.eyvuNL {
+    padding: 0px 3px 12px 0px !important;
+}
+
+.fTxtMi {
+    padding: 2px 0px 12px 0px !important;
+}
+.css-1s2u09g-control{
+    border-color: hsl(0, 0%, 80%) !important;
+}
+.css-1pahdxg-control:hover {
+    border-color: hsl(0, 0%, 80%) !important;
+    box-shadow: none !important;
+}
+
+.css-1pahdxg-control:focus {
+    border-color: hsl(0, 0%, 80%) !important;
+    box-shadow: none !important;
+}
+.css-2613qy-menu{
+    background-color: red !important;
+    z-index: 1000;
+
+}
+
+#agency_details p{
+    padding: 0px;
+    margin: 4px 0px 0px 0px;
+    font-size: 13px;
+}
+#agency_details .form-control, #agency_details select{
+    font-size: 14px !important;
+    padding: 1px 8px !important;
+    margin: 4px 0px 0px 0px;
+}
+#agency_details .form-check label {
+    display: inline-block;
+    font-size: 13px;
+    padding-top: -10px ;
+    margin: 0;
+}
+#cad_call_field_setting .form-check .form-check-label{
+    font-size: 14px !important;
+    /* font-family: cursive !important; */
+}
