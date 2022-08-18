@@ -32,6 +32,7 @@
     background-color: transparent !important;
 }
 
+
 /* .search-container {
     display: flex;
 }
@@ -279,6 +280,7 @@
     padding: 4px 8px;
     color: var(--mainColor);
     box-shadow: 0px 0px 3px var(--mainColor);
+    text-transform: capitalize;
 }
 
 .esri-search__container {
@@ -424,9 +426,11 @@ body *::-webkit-scrollbar-thumb {
 .fTxtMi {
     padding: 2px 0px 12px 0px !important;
 }
-.css-1s2u09g-control{
+
+.css-1s2u09g-control {
     border-color: hsl(0, 0%, 80%) !important;
 }
+
 .css-1pahdxg-control:hover {
     border-color: hsl(0, 0%, 80%) !important;
     box-shadow: none !important;
@@ -436,29 +440,47 @@ body *::-webkit-scrollbar-thumb {
     border-color: hsl(0, 0%, 80%) !important;
     box-shadow: none !important;
 }
-.css-2613qy-menu{
+
+.css-2613qy-menu {
     background-color: red !important;
     z-index: 1000;
-
 }
 
-#agency_details p{
+#agency_details p {
     padding: 0px;
     margin: 4px 0px 0px 0px;
     font-size: 13px;
 }
-#agency_details .form-control, #agency_details select{
+
+#agency_details .form-control,
+#agency_details select {
     font-size: 14px !important;
     padding: 1px 8px !important;
     margin: 4px 0px 0px 0px;
 }
+
 #agency_details .form-check label {
     display: inline-block;
     font-size: 13px;
-    padding-top: -10px ;
+    padding-top: -10px;
     margin: 0;
 }
-#cad_call_field_setting .form-check .form-check-label{
+
+#cad_call_field_setting .form-check .form-check-label {
     font-size: 14px !important;
     /* font-family: cursive !important; */
+}
+
+
+/* Date 15 Aug 2022 ***Deepak Gupta*** */
+
+.name__tab .nav-pills li,
+.property__tab .nav-pills li {
+    margin: 16px 4px 0px 4px;
+}
+
+.name__tab .nav-pills li a,
+.property__tab .nav-pills li a {
+    font-size: 14px;
+    padding: 3px 6px;
 }

@@ -6,6 +6,7 @@ import $ from 'jquery'
 import moment from 'moment';
 import Loader from '../Common/Loader';
 import DataTable from 'react-data-table-component';
+var CryptoJS = require("crypto-js");
 
 const View = () => {
   const [CADCFSCode, setCADCFSCode] = useState([])
@@ -244,15 +245,36 @@ const View = () => {
     setIsLoaded(true)
     axios.get('https://rmsapi.arustu.com/api/RMS/GetDataCalltaker')
       .then(response => {
-        console.log('getCallList', response)
+        // console.log('getCallList', response)
         // setStateList(response.data.data)
-        setCallList(response.data.data)
+        // setCallList(response.data.data)
+
+
+        // ------ Testing Incrypt To Decrypt Data -------
+        console.log('getCallList',response.data.data)
+
+
         setIsLoaded(false)
+        
       })
       .catch(error => {
         console.error('There was an error!', error);
       });
   }
+
+
+  function encrypt(data,key){
+    let encJson = CryptoJS.AES.encrypt(JSON.stringify(data), key).toString();
+     return CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(encJson));
+  }
+
+  function decrypt(data,key){
+    let decData = CryptoJS.enc.Base64.parse(data).toString(CryptoJS.enc.Utf8);
+     return CryptoJS.AES.decrypt(decData, key).toString(CryptoJS.enc.Utf8);
+  }
+
+  
+
 
   const columns = [
     {
@@ -426,14 +448,20 @@ const View = () => {
                 </div>
                 <div className="card-body scroll-roler" style={{ height: '35vh', overflowY: 'scroll' }}>
 
-                  <DataTable
-                    columns={columns}
-                    data={callList}
-                    pagination
-                    // fixedHeader
-                    // fixedHeaderScrollHeight='200px'
-                    highlightOnHover
-                  />
+                  {
+                    spin
+                      ?
+                      <Loader />
+                      :
+                      <DataTable
+                        columns={columns}
+                        data={callList}
+                        pagination
+                        // fixedHeader
+                        // fixedHeaderScrollHeight='200px'
+                        highlightOnHover
+                      />
+                  }
 
                 </div>
               </div>

@@ -15,6 +15,7 @@ import Agency from './Components/Pages/Agency';
 import Utility from './Components/Pages/Utility';
 import Auth from './Auth';
 import ContextProvider from './Context/ContextProvider';
+import Testing from './Components/Pages/Testing';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
                 <Route exact path="/view" element={<Auth cmp={View} />} />
                 <Route exact path="/agency" element={<Auth cmp={Agency} />} />
                 <Route exact path="/utility" element={<Auth cmp={Utility} />} />
+                <Route exact path="/testing" element={<Auth cmp={Testing} />} />
                 <Route exact path="/login" element={<Login />} />
                 <Route path='*' element={<PageNotFound />} />
               </Routes>
