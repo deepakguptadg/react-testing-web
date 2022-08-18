@@ -245,17 +245,22 @@ const View = () => {
     setIsLoaded(true)
     axios.get('https://rmsapi.arustu.com/api/RMS/GetDataCalltaker')
       .then(response => {
-        // console.log('getCallList', response)
-        // setStateList(response.data.data)
-        // setCallList(response.data.data)
+        console.log('getCallList', response.data.data)
 
 
-        // ------ Testing Incrypt To Decrypt Data -------
-        console.log('getCallList',response.data.data)
+        var key = CryptoJS.enc.Utf8.parse('abcdefghijklmnop');
+        var iv = CryptoJS.enc.Base64.parse('QUJDREVGR0g=');
+        var bytes = CryptoJS.TripleDES.decrypt(response.data.data, key, {
+          mode: CryptoJS.mode.CBC,
+          iv: iv,
+        });
+        var decryptedText = bytes.toString(CryptoJS.enc.Utf8);
 
-
+        console.log('decryptedText', decryptedText)
+                setStateList(JSON.parse(decryptedText) )
+        setCallList(JSON.parse(decryptedText))
         setIsLoaded(false)
-        
+
       })
       .catch(error => {
         console.error('There was an error!', error);
@@ -263,17 +268,17 @@ const View = () => {
   }
 
 
-  function encrypt(data,key){
+  function encrypt(data, key) {
     let encJson = CryptoJS.AES.encrypt(JSON.stringify(data), key).toString();
-     return CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(encJson));
+    return CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(encJson));
   }
 
-  function decrypt(data,key){
+  function decrypt(data, key) {
     let decData = CryptoJS.enc.Base64.parse(data).toString(CryptoJS.enc.Utf8);
-     return CryptoJS.AES.decrypt(decData, key).toString(CryptoJS.enc.Utf8);
+    return CryptoJS.AES.decrypt(decData, key).toString(CryptoJS.enc.Utf8);
   }
 
-  
+
 
 
   const columns = [
